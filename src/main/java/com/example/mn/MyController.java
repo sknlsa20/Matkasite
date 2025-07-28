@@ -17,7 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MyController {
-	
+
+	 @RequestMapping("/external")
+    public String redirectToExternal() {
+        // Make sure the URL has the correct scheme with double slashes
+        String externalUrl = "https://matkasite.onrender.com";
+        return "redirect:" + externalUrl;
+    }
 	
 	@RequestMapping("/")
 	public String display(Model model)
